@@ -1,7 +1,7 @@
 name: content_placeholder
 description: A fluter plugin to make nice animated shimmer content placeholders.
-version: 0.0.1
-homepage: http://github.com/ctrleffive/content-placeholder
+version: 0.0.2
+homepage: https://github.com/ctrleffive/content-placeholder
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

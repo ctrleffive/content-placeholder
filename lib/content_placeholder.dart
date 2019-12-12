@@ -45,31 +45,34 @@ class ContentPlaceholder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return this.child != null ? Padding(
-      padding: this.spacing,
-      child: Shimmer.fromColors(
-        baseColor: bgColor,
-        highlightColor: highlightColor,
-        child: child,
-        enabled: isAnimationEnabled,
-      ),
-    ) : ContentPlaceholder(
-      bgColor: this.bgColor,
-      highlightColor: this.highlightColor,
-      isAnimationEnabled: this.isAnimationEnabled,
-      child: ContentPlaceholder.block(
-        width: this.width,
-        height: this.height,
-        context: this.context,
-        spacing: EdgeInsets.all(0),
-        borderRadius: this.borderRadius,
-      ),
-    );
+    return this.child != null
+        ? Padding(
+            padding: this.spacing,
+            child: Shimmer.fromColors(
+              baseColor: bgColor,
+              highlightColor: highlightColor,
+              child: child,
+              enabled: isAnimationEnabled,
+            ),
+          )
+        : ContentPlaceholder(
+            bgColor: this.bgColor,
+            highlightColor: this.highlightColor,
+            isAnimationEnabled: this.isAnimationEnabled,
+            child: ContentPlaceholder.block(
+              width: this.width,
+              height: this.height,
+              context: this.context,
+              spacing: EdgeInsets.all(0),
+              borderRadius: this.borderRadius,
+            ),
+          );
   }
 }
 
 class _Styles {
-  static const EdgeInsets defaultSpacing = const EdgeInsets.fromLTRB(0, 0, 0, 10);
+  static const EdgeInsets defaultSpacing =
+      const EdgeInsets.fromLTRB(0, 0, 0, 10);
   static const double defaultBorderRadius = 8;
   static const double defaultHeight = 100;
   static const Color defaultBlockColor = Colors.white;

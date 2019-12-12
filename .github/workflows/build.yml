@@ -17,9 +17,8 @@ jobs:
     - uses: subosito/flutter-action@v1
       with:
         channel: 'stable'
-    - run: cd example
     - run: flutter pub get
-    - run: flutter build apk --release
+    - run: flutter build apk --target "example/lib/main.dart"
 
     - uses: actions/upload-artifact@master
       with:
