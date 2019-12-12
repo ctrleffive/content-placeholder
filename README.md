@@ -1,7 +1,7 @@
 # Content Placeholder
 
-![Version](https://img.shields.io/static/v1?label=Version&message=0.0.1&color=yellow)
-<!-- ![Build Status](https://github.com/ctrleffive/content-placeholder/workflows/Build/badge.svg) -->
+![Version](https://img.shields.io/pub/v/content_placeholder?label=Pub)
+![Build Status](https://github.com/ctrleffive/content-placeholder/workflows/Build/badge.svg)
 ![Code Size](https://img.shields.io/github/languages/code-size/ctrleffive/content-placeholder?label=Code%20Size)
 ![License](https://img.shields.io/github/license/ctrleffive/content-placeholder?label=License)
 
