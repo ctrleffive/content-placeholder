@@ -1,4 +1,4 @@
-# content_placeholder_example
+# Content Placeholder Example
 
 Demonstrates how to use the content_placeholder plugin.
 
