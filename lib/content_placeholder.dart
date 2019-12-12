@@ -1,7 +1,13 @@
-library content_placeholder;
+import 'dart:async';
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+import 'package:flutter/services.dart';
+
+class ContentPlaceholder {
+  static const MethodChannel _channel =
+      const MethodChannel('content_placeholder');
+
+  static Future<String> get platformVersion async {
+    final String version = await _channel.invokeMethod('getPlatformVersion');
+    return version;
+  }
 }
