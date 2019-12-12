@@ -1,0 +1,22 @@
+PODS:
+  - content_placeholder (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+
+DEPENDENCIES:
+  - content_placeholder (from `.symlinks/plugins/content_placeholder/ios`)
+  - Flutter (from `Flutter`)
+
+EXTERNAL SOURCES:
+  content_placeholder:
+    :path: ".symlinks/plugins/content_placeholder/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  content_placeholder: 74d0bb90dca16c3a4b5da4ca10cced18b0dbc8b9
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+
+PODFILE CHECKSUM: 1b66dae606f75376c5f2135a8290850eeb09ae83
+
+COCOAPODS: 1.8.4
