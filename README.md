@@ -1,14 +1,28 @@
-# content_placeholder
+# Content Placeholder
 
-A new flutter plugin project.
+![Version](https://img.shields.io/static/v1?label=Version&message=0.0.1&color=yellow)
+<!-- ![Build Status](https://github.com/ctrleffive/content-placeholder/workflows/Build/badge.svg) -->
+![Code Size](https://img.shields.io/github/languages/code-size/ctrleffive/content-placeholder?label=Code%20Size)
+![License](https://img.shields.io/github/license/ctrleffive/content-placeholder?label=License)
 
+A fluter plugin to make nice animated shimmer content placeholders. This plugin uses [shimmer](https://pub.dev/packages/shimmer) flutter plugin for shimmer animation.
+
+## How To Use
+
+```dart
+ContentPlaceholder();
+```
+
+  
 ## Getting Started
+See the `example` directory for a complete sample app.
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## Changelog
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+Refer to the [Changelog](CHANGELOG.md) to get all release notes.
+
+## Issues & Feedback
+
+Please file issues, bugs, or feature requests in the repository issue tracker.
+
+Contributions are welcome 😊❤️
