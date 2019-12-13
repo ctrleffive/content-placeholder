@@ -63,32 +63,33 @@ class ContentPlaceholder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return this.child != null
-        ? Padding(
-            padding: this.spacing,
-            child: Shimmer.fromColors(
-              baseColor: bgColor,
-              highlightColor: highlightColor,
-              child: child,
-              enabled: isAnimationEnabled,
-            ),
-          )
-        : ContentPlaceholder(
-            bgColor: this.bgColor,
-            highlightColor: this.highlightColor,
-            isAnimationEnabled: this.isAnimationEnabled,
-            child: ContentPlaceholder.block(
-              width: this.width,
-              height: this.height,
-              context: this.context,
-              topSpacing: this.spacing.top ?? 0,
-              leftSpacing: this.spacing.left ?? 0,
-              rightSpacing: this.spacing.right ?? 0,
-              bottomSpacing:
-                  this.spacing.bottom ?? _Styles.defaultSpacingSingle,
-              borderRadius: this.borderRadius,
-            ),
-          );
+    if (this.child != null) {
+      return Padding(
+        padding: this.spacing,
+        child: Shimmer.fromColors(
+          baseColor: bgColor,
+          highlightColor: highlightColor,
+          child: child,
+          enabled: isAnimationEnabled,
+        ),
+      );
+    } else {
+      return ContentPlaceholder(
+        bgColor: this.bgColor,
+        highlightColor: this.highlightColor,
+        isAnimationEnabled: this.isAnimationEnabled,
+        child: ContentPlaceholder.block(
+          width: this.width,
+          height: this.height,
+          context: this.context,
+          topSpacing: this.spacing.top ?? 0,
+          leftSpacing: this.spacing.left ?? 0,
+          rightSpacing: this.spacing.right ?? 0,
+          bottomSpacing: this.spacing.bottom ?? _Styles.defaultSpacingSingle,
+          borderRadius: this.borderRadius,
+        ),
+      );
+    }
   }
 }
 
