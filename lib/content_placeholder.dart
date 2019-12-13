@@ -3,17 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ContentPlaceholder extends StatelessWidget {
+  /// Single block for group of shapes. `block` should be used only inside a `ContentPlaceholder`.
   static Widget block({
     double width,
     double height,
     BuildContext context,
-    EdgeInsets spacing = _Styles.defaultSpacing,
+    double topSpacing = 0,
+    double leftSpacing = 0,
+    double rightSpacing = 0,
+    double bottomSpacing = _Styles.defaultSpacingSingle,
     double borderRadius = _Styles.defaultBorderRadius,
   }) {
     return Container(
-      width: context != null ? MediaQuery.of(context).size.width : width,
-      height: height != null ? height : _Styles.defaultHeight,
-      margin: spacing,
+      width: width,
+      height: height ?? _Styles.defaultHeight,
+      margin: EdgeInsets.fromLTRB(
+        leftSpacing,
+        topSpacing,
+        rightSpacing,
+        bottomSpacing,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(borderRadius),
         color: _Styles.defaultBlockColor,
@@ -21,14 +30,23 @@ class ContentPlaceholder extends StatelessWidget {
     );
   }
 
+  /// If child is `null` you will get one block. If child contains some widget, the widget will be covered with placeholder.
   final Widget child;
+
+  /// Default width will be 100%.
   final double width;
   final double height;
   final double borderRadius;
   final BuildContext context;
   final EdgeInsets spacing;
+
+  /// Blocks background color
   final Color bgColor;
+
+  /// Is shimmer animation needed. Default is `true`.
   final bool isAnimationEnabled;
+
+  /// Shimmer animation gradient color.
   final Color highlightColor;
 
   ContentPlaceholder({
@@ -63,7 +81,11 @@ class ContentPlaceholder extends StatelessWidget {
               width: this.width,
               height: this.height,
               context: this.context,
-              spacing: EdgeInsets.all(0),
+              topSpacing: this.spacing.top ?? 0,
+              leftSpacing: this.spacing.left ?? 0,
+              rightSpacing: this.spacing.right ?? 0,
+              bottomSpacing:
+                  this.spacing.bottom ?? _Styles.defaultSpacingSingle,
               borderRadius: this.borderRadius,
             ),
           );
@@ -71,8 +93,9 @@ class ContentPlaceholder extends StatelessWidget {
 }
 
 class _Styles {
+  static const double defaultSpacingSingle = 10;
   static const EdgeInsets defaultSpacing =
-      const EdgeInsets.fromLTRB(0, 0, 0, 10);
+      const EdgeInsets.fromLTRB(0, 0, 0, _Styles.defaultSpacingSingle);
   static const double defaultBorderRadius = 8;
   static const double defaultHeight = 100;
   static const Color defaultBlockColor = Colors.white;
