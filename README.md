@@ -12,10 +12,11 @@ A fluter plugin to make nice animated shimmer content placeholders. This plugin 
 ```dart
 ContentPlaceholder();
 ```
-
   
 ## Getting Started
-See the `example` directory for a complete sample app.
+See the [example](example) directory for a complete sample app.
+
+![Example App](example_app.gif)
 
 ## Changelog
 
