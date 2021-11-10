@@ -89,8 +89,8 @@ class SectionHolder extends StatelessWidget {
   final ContentPlaceholder placeholder;
 
   SectionHolder({
-    @required this.placeholder,
-    @required this.label,
+    required this.placeholder,
+    required this.label,
   });
 
   @override
@@ -98,7 +98,7 @@ class SectionHolder extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(this.label, style: Theme.of(context).textTheme.headline),
+        Text(this.label, style: Theme.of(context).textTheme.headline4),
         SizedBox(height: 10),
         this.placeholder,
         SizedBox(height: 20),
