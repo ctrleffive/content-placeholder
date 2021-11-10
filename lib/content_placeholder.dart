@@ -5,9 +5,9 @@ import 'package:shimmer/shimmer.dart';
 class ContentPlaceholder extends StatelessWidget {
   /// Single block for group of shapes. `block` should be used only inside a `ContentPlaceholder`.
   static Widget block({
-    double width,
-    double height,
-    BuildContext context,
+    double? width,
+    double? height,
+    BuildContext? context,
     double topSpacing = 0,
     double leftSpacing = 0,
     double rightSpacing = 0,
@@ -31,13 +31,13 @@ class ContentPlaceholder extends StatelessWidget {
   }
 
   /// If child is `null` you will get one block. If child contains some widget, the widget will be covered with placeholder.
-  final Widget child;
+  final Widget? child;
 
   /// Default width will be 100%.
-  final double width;
-  final double height;
+  final double? width;
+  final double? height;
   final double borderRadius;
-  final BuildContext context;
+  final BuildContext? context;
   final EdgeInsets spacing;
 
   /// Blocks background color
@@ -69,7 +69,7 @@ class ContentPlaceholder extends StatelessWidget {
         child: Shimmer.fromColors(
           baseColor: bgColor,
           highlightColor: highlightColor,
-          child: child,
+          child: child!,
           enabled: isAnimationEnabled,
         ),
       );
@@ -82,10 +82,10 @@ class ContentPlaceholder extends StatelessWidget {
           width: this.width,
           height: this.height,
           context: this.context,
-          topSpacing: this.spacing.top ?? 0,
-          leftSpacing: this.spacing.left ?? 0,
-          rightSpacing: this.spacing.right ?? 0,
-          bottomSpacing: this.spacing.bottom ?? _Styles.defaultSpacingSingle,
+          topSpacing: this.spacing.top ,
+          leftSpacing: this.spacing.left,
+          rightSpacing: this.spacing.right,
+          bottomSpacing: this.spacing.bottom,
           borderRadius: this.borderRadius,
         ),
       );
